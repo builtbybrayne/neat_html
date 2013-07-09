@@ -11,7 +11,7 @@ Will print <code>$somevar</code> in simplified \t and \n notation. Used directly
 
     neat_html($somevar)
 
-Will print <code>$somevar</code> into html as a <code>&lt;pre&gt;</code>-wrapper block formatted like JSON.
+Will print <code>$somevar</code> into html as a <code>&lt;pre&gt;</code>-wrapped block formatted like JSON.
 
     neat_html($somevar,true)
 
