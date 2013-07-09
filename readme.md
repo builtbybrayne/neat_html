@@ -13,9 +13,9 @@ Will print <code>$somevar</code> in simplified \t and \n notation. Used directly
 
 Will print <code>$somevar</code> into html as a <code>&lt;pre&gt;</code>-wrapped block formatted like JSON.
 
-    neat_html($somevar,true)
+    $output = neat_html($somevar,true)
 
-As with <code>neat_html($somevar)</code> except that the output is returned and not printed.
+As with <code>neat_html($somevar)</code> except that the output is returned, captured in the $output variable and not printed.
 
     neat_html($somevar,"die")
 
