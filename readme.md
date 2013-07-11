@@ -20,3 +20,11 @@ As with <code>neat_html($somevar)</code> except that the output is returned, cap
     neat_html($somevar,"die")
 
 Outputs the formatted <code>$somevar</code> and then dies.
+
+    neat_html($somevar,"comment")
+
+Outputs the formatted code in comment form. comments start <code>$lt;--neat_html</code> for easy searching.
+
+You can also collect multiple arguments together in a second argument array as follows:
+
+    neat_html($somevar,array("comment","return","die");

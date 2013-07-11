@@ -44,16 +44,22 @@ if ( !function_exists('neat_html') ) {
     function neat_html($arr, $args=null) {
         $die = false;
         $return = false;
+        $comment = false;
         if ( is_bool($args) ) $return = $args;
         if ( is_string($args) ) $args = array($args);
         if ( is_array($args) ) {
             foreach ( $args as $arg ) {
                 if ( $arg == "die" ) $die = true;
+                if ( $arg == "return" ) $return = true;
+                if ( $arg == "comment" ) $comment = true;
             }
         }
-        $str = "<pre style=\"color:black\">\n";
+        $str = "";
+        if ( $comment ) $str .= "<!--neat_html ";
+        $str .= "<pre style=\"color:black\">\n";
         $str .= print_r($arr,true);
         $str .= "</pre>\n";
+        if ( $comment ) $str .= "-->";
         if ($return == true) return $str;
         echo $str;
         if ( $die ) die();
