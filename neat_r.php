@@ -54,6 +54,11 @@ if ( !function_exists('neat_html') ) {
                 if ( $arg == "comment" ) $comment = true;
             }
         }
+        if ( $arr===true )
+            $arr="True";
+        else if ( $arr===false )
+            $arr="False";
+
         $str = "";
         if ( $comment ) $str .= "<!--neat_html ";
         $str .= "<pre style=\"color:black\">\n";
