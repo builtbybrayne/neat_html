@@ -1,7 +1,7 @@
 neat_r
 --------
 
-**neat_r** provides a couple of functions for prettier printing of PHP variables in HTML contexts.
+**neat_r** prettier html printing of php objects and arrays
 
 ###Usage
 
