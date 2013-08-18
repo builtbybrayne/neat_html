@@ -1,7 +1,7 @@
-neat_r
+neat_html
 --------
 
-**neat_r** prettier html printing of php objects and arrays
+**neat_html** prettier html printing of php objects and arrays
 
 ###Usage
 
