@@ -29,6 +29,7 @@ if ( !function_exists("truepath") ) {
         if(file_exists($path) && linkinfo($path)>0)$path=readlink($path);
         // put initial separator that could have been lost
         $path=!$unipath ? '/'.$path : $path;
+        $path=($path{0}!="/") ? '/'.$path : $path;
         return $path;
     }
 }
