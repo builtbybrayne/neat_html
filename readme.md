@@ -35,4 +35,4 @@ Also, the file reference must be absolute. For convenience a `truepath` function
 
 You can also collect multiple arguments together in a second argument array as follows:
 
-    neat_html($somevar,array("comment","return","die");
+    neat_html($somevar,array("include","comment","return");
