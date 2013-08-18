@@ -31,7 +31,7 @@ Takes $somefileref as a file reference and includes that file's contents. Obviou
 
 Also, the file reference must be absolute. For convenience a `truepath` function is included to get the real path. (PHP's realpath() function is a bit buggy, so best not use that. see http://stackoverflow.com/questions/4049856/replace-phps-realpath).
 
-    neat_html(truepath($somefileref,'include')
+    neat_html(truepath($somefileref),'include')
 
 You can also collect multiple arguments together in a second argument array as follows:
 
