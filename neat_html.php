@@ -95,6 +95,8 @@ if ( !function_exists('neat_html') ) {
             $arr="True";
         else if ( $arr===false )
             $arr="False";
+        else if ( $arr===null )
+            $arr="Null";
 
         if ( $include ) {
             ob_start();
