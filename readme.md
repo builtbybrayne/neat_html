@@ -29,9 +29,13 @@ Outputs the formatted code in comment form. comments start <code>$lt;--neat_html
 
 Takes $somefileref as a file reference and includes that file's contents. Obviously, if the included file uses undefined variables then it will fail.
 
-Also, the file reference must be absolute. For convenience a `truepath` function is included to get the real path. (PHP's realpath() function is a bit buggy, so best not use that. see http://stackoverflow.com/questions/4049856/replace-phps-realpath).
+Also, the file reference must be absolute. For convenience a `truepath` function is included to get the real path. (PHP's realpath() function is a bit buggy, so best not use that. see http://stackoverflow.com/questions/4049856/replace-phps-realpath). e.g.
 
     neat_html(truepath($somefileref),'include')
+
+    neat_html($somevar,'json')
+
+Returns the object in json notation. Handy when debugging over ajax that expects a json response.
 
 You can also collect multiple arguments together in a second argument array as follows:
 

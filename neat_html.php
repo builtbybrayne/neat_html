@@ -81,6 +81,7 @@ if ( !function_exists('neat_html') ) {
         $return = false;
         $comment = false;
         $include = false;
+        $json = false;
         if ( is_bool($args) ) $return = $args;
         if ( is_string($args) ) $args = array($args);
         if ( is_array($args) ) {
@@ -89,19 +90,27 @@ if ( !function_exists('neat_html') ) {
                 if ( $arg == "return" ) $return = true;
                 if ( $arg == "comment" ) $comment = true;
                 if ( $arg == "include" ) $include = true;
+                if ( $arg == "json" ) $json = true;
             }
         }
+
         if ( $arr===true )
             $arr="True";
         else if ( $arr===false )
             $arr="False";
-        else if ( $arr===null )
+        if ( $arr === null ) {
             $arr="Null";
+        }
+
 
         if ( $include ) {
             ob_start();
             include $arr;
             $arr = ob_get_clean();
+        }
+
+        if ( $json ) {
+            $arr = json_encode($arr);
         }
 
         $str = "";
