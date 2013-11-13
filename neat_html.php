@@ -115,7 +115,7 @@ if ( !function_exists('neat_html') ) {
 
         $str = "";
         if ( $comment ) $str .= "<!--neat_html ";
-        if ( !$json) { $str .= "<pre style=\"color:black\">\n"; }
+        if ( !$json) { $str .= "<pre style=\"color:black; white-space: pre-wrap\">\n"; }
         $str .= print_r($arr,true);
         if ( !$json ) { $str .= "</pre>\n"; }
         if ( $comment ) $str .= "-->";
