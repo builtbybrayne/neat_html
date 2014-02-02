@@ -83,9 +83,15 @@ if ( !function_exists('neat_html') ) {
         $include = false;
         $json = false;
         if ( is_bool($args) ) $return = $args;
-        if ( is_string($args) ) $args = array($args);
+        if ( is_string($args) ) {
+            $args = explode(",",$args);
+            if ( count($args)==1 ) {
+                $args = explode(" ",$args[0]);
+            }
+        }
         if ( is_array($args) ) {
             foreach ( $args as $arg ) {
+                $arg = trim($arg);
                 if ( $arg == "die" ) $die = true;
                 if ( $arg == "return" ) $return = true;
                 if ( $arg == "comment" ) $comment = true;

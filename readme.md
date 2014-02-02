@@ -53,3 +53,7 @@ Returns the object in json notation. Handy when debugging over ajax that expects
 You can also collect multiple arguments together in a second argument array as follows:
 
     neat_html($somevar,array("include","comment","return");
+
+Or as a comma or space separated list:
+
+    neat_html($somevar,"include, comment, return");
