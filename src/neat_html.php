@@ -17,12 +17,13 @@ function neat_html($arr, $args=null) {
     $json = false;
     $nopre = false;
     if ( is_bool($args) ) $return = $args;
-    if ( is_string($args) ) $args = array($args);
+    if ( is_string($args) ) {
         $args = explode(",",$args);
         if ( count($args)==1 ) {
             $args = explode(" ",$args[0]);
         }
     }
+   
     if ( is_array($args) ) {
         foreach ( $args as $arg ) {
             $arg = trim($arg);
@@ -57,7 +58,7 @@ function neat_html($arr, $args=null) {
     if ( $comment ) $str .= "<!--neat_html ";
     if ( !$json && !$nopre ) { $str .= "<pre style=\"color:black; white-space: pre-wrap\">\n"; }
     $str .= print_r($arr,true);
-    if ( !$json && !$nopre) { $str .= "</pre>\n"; }
+    if ( !$json && !$nopre ) { $str .= "</pre>\n"; }
     if ( $comment ) $str .= "-->";
     if ($return == true) return $str;
     echo $str;
