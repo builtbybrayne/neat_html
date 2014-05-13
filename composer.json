@@ -1,0 +1,27 @@
+{
+    "name": "perchten/neat_html",
+    "type": "library",
+    "description": "Pretty-print PHP objects and arrays in html.",
+    "keywords": [
+        "pretty-print",
+        "print_r",
+        "arrays",
+        "objects",
+        "console",
+        "print"
+    ],
+    "homepage": "https://github.com/perchten/neat_html",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alastair Brayne",
+            "email": "al@perchten.co.uk",
+            "homepage": "http://perchten.co.uk"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/neat_html.php"
+        ]
+    }
+}

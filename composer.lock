@@ -1,0 +1,66 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "68ed531c6e40bfc0f048d2788560b6bd",
+    "packages": [
+        {
+            "name": "perchten/truepath",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/perchten/php-truepath.git",
+                "reference": "8797ded1fbf3bbed5642367f527d8a75a9a6a3e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/perchten/php-truepath/zipball/8797ded1fbf3bbed5642367f527d8a75a9a6a3e8",
+                "reference": "8797ded1fbf3bbed5642367f527d8a75a9a6a3e8",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/truepath.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alastair Brayne",
+                    "email": "al@perchten.co.uk",
+                    "homepage": "http://perchten.co.uk"
+                }
+            ],
+            "description": "Replace PHP's extremely buggy realpath()",
+            "homepage": "https://github.com/perchten/php-truepath",
+            "keywords": [
+                "path",
+                "php",
+                "realpath",
+                "truepath"
+            ],
+            "time": "2014-05-13 22:27:02"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": [
+
+    ],
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}
