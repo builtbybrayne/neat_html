@@ -77,6 +77,10 @@ You can also collect multiple arguments together in a second argument array as f
 
     neat_html($somevar,array("include","comment","return");
 
+Or as a comma or space separated list:
+
+    neat_html($somevar,"include, comment, return");
+
 
 ## License
 
