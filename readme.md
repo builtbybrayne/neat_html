@@ -3,9 +3,7 @@ neat_html
 
 Prettier html printing of php objects and arrays
 
-## Usage
-
-### Installation
+## Installation
 
 ##### Via Composer
 
@@ -25,7 +23,7 @@ Clone or download from [GitHub](https://github.com/perchten/neat_html) and inclu
 
 	require_once "path/to/neat_html/neat_html"
 
-### Code
+## Usage
 
 ##### Simple neat_html
     neat_html($somevar)
@@ -81,6 +79,15 @@ Or as a comma or space separated list:
 
     neat_html($somevar,"include, comment, return");
 
+#### Enabling/Disabling `neat_html` functionality
+
+`neat_Html` statements will run by default, but you can control this by switching the functionality on and off globally, and querying the current state.
+
+    Neat_Html::setOn() // switches this module on globally
+  
+    Neat_Html::setOff() // switches this module off globally
+    
+    Neat_Html::isOn() // return true if module is on, otherwise false
 
 ## License
 
