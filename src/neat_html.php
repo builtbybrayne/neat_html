@@ -1,6 +1,33 @@
 <?php
 
 /**
+ * Helper class for neat_html debugging
+ * */
+class Neat_Html {
+    private static $enabled = true;
+
+    /*
+     * Switch on neat_html functionality, globally
+     */
+    public static function on() {
+        self::$enabled = true;
+    }
+    /*
+     * Switch off neat_html functionality, globally
+     */
+    public static function off() {
+        self::$enabled = false;
+    }
+
+    /*
+     * @return true if neat_html is enabled globally
+     */
+    public static function isOn(){
+        return self::$enabled;
+    }
+}
+
+/**
  * This function - particularly the second $args parameter can be heavily overloaded.
  *
  * The best documentation is available at https://github.com/perchten/neat_html
@@ -10,6 +37,9 @@
  * @return string
  */
 function neat_html($arr, $args=null) {
+    if ( !Neat_Html::isOn() )
+        return "";
+
     $die = false;
     $return = false;
     $comment = false;
@@ -64,3 +94,5 @@ function neat_html($arr, $args=null) {
     echo $str;
     if ( $die ) die();
 }
+
+
