@@ -5,6 +5,7 @@
  * */
 class Neat_Html {
     private static $enabled = true;
+    private static $defaults = array();
 
     /*
      * Switch on neat_html functionality, globally
@@ -25,6 +26,25 @@ class Neat_Html {
     public static function isOn(){
         return self::$enabled;
     }
+
+
+    public static function setDefault($key) {
+        self::$defaults[$key] = $key;
+    }
+
+    public static function setDefaults($defaults) {
+        self::$defaults = array();
+        foreach ( $defaults as $v) {
+            self::setDefault($v);
+        }
+    }
+    public static function getDefaults() {
+        return self::$defaults;
+    }
+
+    public static function removeDefault($key) {
+        unset(self::$defaults[$key]);
+    }
 }
 
 /**
@@ -44,6 +64,10 @@ function neat_html($arr, $args=null) {
     $args = func_get_args();
     array_shift($args);
 
+    foreach ( Neat_Html::getDefaults() as $default ) {
+        $args[] = $default;
+    }
+
     $die = false;
     $return = false;
     $comment = false;
@@ -57,7 +81,7 @@ function neat_html($arr, $args=null) {
             $args = explode(" ",$args[0]);
         }
     }
-   
+
     if ( is_array($args) ) {
         foreach ( $args as $arg ) {
             $arg = trim($arg);
