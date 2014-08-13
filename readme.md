@@ -69,6 +69,13 @@ Also, the file reference must be absolute. For convenience a `truepath` function
 
 Returns the object in json notation. Handy when debugging over ajax that expects a json response.
 
+##### Output in PHP (Handy For Purists ;))
+
+    neat_html($somevar,'php')
+
+Returns the object in php notation. This then uses the [var_export](http://php.net/manual/en/function.var-export.php) function instead of `print_r`. So the returned values here can even be interpreted directly as php variables.
+
+
 ##### Multiple Arguments
 
 You can also collect multiple arguments together in a second argument array as follows:
@@ -78,6 +85,11 @@ You can also collect multiple arguments together in a second argument array as f
 Or as a comma or space separated list:
 
     neat_html($somevar,"include, comment, return");
+    
+And, as of `v1.2` you can even use dynamic arguments:
+
+	neat_html($somevar,"include","comment","return");
+	
 
 #### Enabling/Disabling `neat_html` functionality
 

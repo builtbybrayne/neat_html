@@ -74,6 +74,8 @@ function neat_html($arr, $args=null) {
     $include = false;
     $json = false;
     $nopre = false;
+    $php = false;
+
     if ( is_bool($args) ) $return = $args;
     if ( is_string($args) ) {
         $args = explode(",",$args);
@@ -91,6 +93,7 @@ function neat_html($arr, $args=null) {
             if ( $arg == "include" ) $include = true;
             if ( $arg == "json" ) $json = true;
             if ( $arg == "nopre" ) $nopre= true;
+            if ( $arg == "php" ) $php= true;
         }
     }
 
@@ -112,10 +115,16 @@ function neat_html($arr, $args=null) {
         $arr = json_encode($arr);
     }
 
+
+    $printFn = 'print_r';
+    if ( $php ) {
+        $printFn = 'var_export';
+    }
+
     $str = "";
     if ( $comment ) $str .= "<!--neat_html ";
     if ( !$json && !$nopre ) { $str .= "<pre style=\"color:black; white-space: pre-wrap\">\n"; }
-    $str .= print_r($arr,true);
+    $str .= $printFn($arr,true);
     if ( !$json && !$nopre ) { $str .= "</pre>\n"; }
     if ( $comment ) $str .= "-->";
     if ($return == true) return $str;
