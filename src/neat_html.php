@@ -29,16 +29,20 @@ class Neat_Html {
 
 /**
  * This function - particularly the second $args parameter can be heavily overloaded.
+ * (Also allows dynamic argument definitions)
  *
  * The best documentation is available at https://github.com/perchten/neat_html
  *
  * @param $arr
- * @param null $args
+ * @param null $args...
  * @return string
  */
 function neat_html($arr, $args=null) {
     if ( !Neat_Html::isOn() )
         return "";
+
+    $args = func_get_args();
+    array_shift($args);
 
     $die = false;
     $return = false;
