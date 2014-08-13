@@ -23,7 +23,7 @@ Add the following to your `composer.json`
 
 Clone or download from [GitHub](https://github.com/perchten/neat_html) and include directly in your code:
 
-	require_once "path/to/neat_html/neat_html"
+	require_once "path/to/neat_html.php"
 
 ### Code
 
