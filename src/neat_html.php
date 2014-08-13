@@ -75,6 +75,7 @@ function neat_html($arr, $args=null) {
     $json = false;
     $nopre = false;
     $php = false;
+    $dump = false;
 
     if ( is_bool($args) ) $return = $args;
     if ( is_string($args) ) {
@@ -87,13 +88,14 @@ function neat_html($arr, $args=null) {
     if ( is_array($args) ) {
         foreach ( $args as $arg ) {
             $arg = trim($arg);
-            if ( $arg == "die" ) $die = true;
-            if ( $arg == "return" ) $return = true;
+            if ( $arg == "die"     ) $die = true;
+            if ( $arg == "return"  ) $return = true;
             if ( $arg == "comment" ) $comment = true;
             if ( $arg == "include" ) $include = true;
-            if ( $arg == "json" ) $json = true;
-            if ( $arg == "nopre" ) $nopre= true;
-            if ( $arg == "php" ) $php= true;
+            if ( $arg == "json"    ) $json = true;
+            if ( $arg == "nopre"   ) $nopre= true;
+            if ( $arg == "php"     ) $php= true;
+            if ( $arg == "dump"    ) $dump= true;
         }
     }
 
@@ -111,10 +113,15 @@ function neat_html($arr, $args=null) {
         $arr = ob_get_clean();
     }
 
+    if ( $dump ) {
+        var_dump($arr);
+    }
+
+    // End of the input data manipulation. Now beginning formatting
+
     if ( $json ) {
         $arr = json_encode($arr);
     }
-
 
     $printFn = 'print_r';
     if ( $php ) {
@@ -127,8 +134,11 @@ function neat_html($arr, $args=null) {
     $str .= $printFn($arr,true);
     if ( !$json && !$nopre ) { $str .= "</pre>\n"; }
     if ( $comment ) $str .= "-->";
-    if ($return == true) return $str;
+
+    if ($return == true)
+        return $str;
     echo $str;
+
     if ( $die ) die();
 }
 

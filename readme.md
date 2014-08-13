@@ -26,6 +26,7 @@ Clone or download from [GitHub](https://github.com/perchten/neat_html) and inclu
 ## Usage
 
 ##### Simple neat_html
+
     neat_html($somevar)
 
 Will print <code>$somevar</code> into html as a <code>&lt;pre&gt;</code>-wrapped block formatted like JSON.
@@ -91,15 +92,37 @@ And, as of `v1.2` you can even use dynamic arguments:
 	neat_html($somevar,"include","comment","return");
 	
 
-#### Enabling/Disabling `neat_html` functionality
+##### var_dump
 
-`neat_Html` statements will run by default, but you can control this by switching the functionality on and off globally, and querying the current state.
+    neat_html($somevar,'dump');
+
+This will run all data manipulation on `$somevar` (including if it is a file include), and then `var_dump` the result _in addition_ to outputting in any other specified formatting.
+
+
+##### Defaults
+
+You can set defaults at a global level if you find yourself repeating the same optional arguments all the time.
+
+	Neat_Html::setDefault($option);
+	
+	Neat_Html::getDefaults();
+	
+	Neat_Html::setDefaults($optionsArray);
+	
+	Neat_Html::removeDefault($option);	
+    
+
+
+##### Enabling/Disabling 
+
+`neat_html` statements will run by default, but you can control this by switching the functionality on and off globally, and querying the current state.
 
     Neat_Html::setOn() // switches this module on globally
   
     Neat_Html::setOff() // switches this module off globally
     
     Neat_Html::isOn() // return true if module is on, otherwise false
+    
 
 ## License
 
