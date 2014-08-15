@@ -61,8 +61,11 @@ function neat_html($arr, $args=null) {
     if ( !Neat_Html::isOn() )
         return "";
 
-    $args = func_get_args();
-    array_shift($args);
+    $fargs = func_get_args();
+    if ( count($fargs) > 2 ) {
+        $args = $fargs;
+        array_shift($args);
+    }
 
     foreach ( Neat_Html::getDefaults() as $default ) {
         $args[] = $default;
